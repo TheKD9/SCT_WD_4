@@ -1,84 +1,110 @@
-:root{
-    --bg:#0f172a;
-    --card:#1e293b;
-    --text:white;
-}
-
-*{box-sizing:border-box;font-family: Segoe UI, Tahoma;}
+*{box-sizing:border-box;font-family:Segoe UI;}
 body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    padding: 30px;
+    margin:0;
+    background:linear-gradient(120deg,#0f172a,#1e293b);
+    color:white;
 }
 
 .app{
-    width: 650px;
-    background: var(--card);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display:flex;
+    height:100vh;
+    padding:20px;
+    gap:20px;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* SIDEBAR */
+.sidebar{
+    width:280px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    padding:20px;
+    border-radius:20px;
 }
 
-.controls{
-    display: grid;
-    grid-template-columns: 1fr 120px 120px;
-    gap: 10px;
-    margin: 20px 0;
+.subtitle{opacity:.6;font-size:13px;}
+
+.statsBox{
+    display:flex;
+    justify-content:space-between;
+    margin:20px 0;
+}
+.statsBox div{
+    text-align:center;
+}
+.statsBox span{
+    font-size:22px;
+    font-weight:bold;
 }
 
-.controls input,select,button{
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
+.quickAdd{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+.quickAdd input{
+    flex:1;
+    padding:10px;
+    border:none;
+    border-radius:10px;
+}
+.quickAdd button{
+    background:#7c3aed;
+    border:none;
+    color:white;
+    padding:10px 15px;
+    border-radius:10px;
+    font-size:18px;
 }
 
-button{
-    background: #3b82f6;
-    color: white;
-    cursor: pointer;
+.menu button{
+    width:100%;
+    padding:12px;
+    margin:6px 0;
+    border:none;
+    border-radius:12px;
+    background:rgba(255,255,255,0.07);
+    color:white;
+    cursor:pointer;
 }
 
-.filters button{margin-right: 5px;background: #64748b;}
-
-.stats{margin: 15px 0;}
-
-.progress{
-    background: #334155;
-    height: 8px;
-    border-radius: 10px;
+/* MAIN PANEL */
+.main{
+    flex:1;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+    padding:20px;
+    border-radius:20px;
 }
-#progressBar{
-    height: 100%;
-    width: 0%;
-    background: #22c55e;
-    border-radius: 10px;
+
+.topBar{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
 }
+
+ul{list-style:none;padding:0;}
 
 li{
-    background: #334155;
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: .3s;
+    background:rgba(255,255,255,0.06);
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:14px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+li:hover{transform:scale(1.02);}
+
+.completed{opacity:.4;text-decoration:line-through;}
+
+.taskBtns button{
+    margin-left:8px;
+    border:none;
+    padding:6px 10px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-li:hover{transform: scale(1.03);}
-
-.completed{text-decoration: line-through; opacity: .5;}
-
-.high{border-left: 6px solid #ef4444;}
-.medium{border-left: 6px solid #f59e0b;}
-.low{border-left: 6px solid #22c55e;}
-
+.completeBtn{background:#22c55e;color:white;}
+.deleteBtn{background:#ef4444;color:white;}

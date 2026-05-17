@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do App</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>To-Do App</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="app">
-        <header>
-            <h1>✨ Smart To-Do</h1>
-        </header>
 
-        <div class="controls">
-            <input id="search" placeholder="Search tasks...">
+<div class="app">
 
-            <select id="category">
-                <option>Work</option>
-                <option>Study</option>
-                <option>Personal</option>
-            </select>
+    
+    <aside class="sidebar">
+        <h2>To Do List</h2>
+        <p class="subtitle">Stay organized, get things done</p>
 
-            <select id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+        <div class="statsBox">
+            <div><span id="totalTasks">0</span><small>Total</small></div>
+            <div><span id="completedTasks">0</span><small>Completed</small></div>
+            <div><span id="progressPercent">0%</span><small>Progress</small></div>
+        </div>
+
+        <div class="quickAdd">
+            <input id="taskInput" placeholder="Quick add task">
+            <button onclick="addTask()">+</button>
+        </div>
+
+        <div class="menu">
+            <button onclick="setFilter('all')">📋 All Tasks</button>
+            <button onclick="setFilter('today')">📅 Today</button>
+            <button onclick="setFilter('completed')">✔ Completed</button>
+        </div>
+    </aside>
+
+    
+    <main class="main">
+        <div class="topBar">
+            <h1>Tasks</h1>
             <input type="datetime-local" id="date">
-            <input id="taskInput" placeholder="New Task...">
-            <button onclick="addTask()">Add</button>
         </div>
 
-        <div class="filters">
-            <button onclick="setFilter('all')">All</button>
-            <button onclick="setFilter('active')">Active</button>
-            <button onclick="setFilter('completed')">Completed</button>
-        </div>
-
-        <div class="stats">
-            <span id="taskCount"></span>
-            <div class="progress">
-                <div id="progressBar"></div>
-            </div>
-        </div>
         <ul id="taskList"></ul>
-    </div>
+    </main>
 
-</body>
+</div>
+
 <script src="script.js"></script>
+</body>
 </html>
